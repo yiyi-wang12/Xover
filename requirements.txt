@@ -1,0 +1,30 @@
+# ============================================================
+#  岔音 Xover —— 依赖清单
+#  环境: Windows + Python 3.13
+#  (tkinter 是 Python 官方安装包自带的，不需要也不能用 pip 装)
+#
+#  安装（一行，直接复制）:
+#    pip install -r requirements.txt
+#
+#  国内网络慢时改用镜像:
+#    pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+#
+#  运行:
+#    双击 xover.pyw（无控制台）
+#    python xover.pyw（命令行，能看到日志）
+# ============================================================
+
+# ---------- 直接依赖（必须）----------
+customtkinter==6.0.0        # 界面框架，整个 UI 都用它
+miniaudio==1.71             # 音频播放，支持两台机器各走一个输出设备
+imageio-ffmpeg==0.6.0       # 自带 ffmpeg 程序，负责解码 flac/wav/mp3 和 MV 视频
+pillow==12.3.0              # 把 MV 视频帧转成 Tkinter 能显示的图像
+numpy==2.3.5                # 核心：FFT 分频（线性相位 FIR）、音频块拼接、float32 PCM
+
+# ---------- 以上库的附带依赖（一般会自动装上，列出为便于离线部署）----------
+cffi==2.1.1                 # miniaudio 依赖
+darkdetect==0.8.0           # customtkinter 依赖
+packaging==26.3             # customtkinter 依赖
+
+# 只用标准库的部分（无需安装）: array / ctypes / queue / subprocess / threading / time
+#                              / tkinter / pathlib / collections

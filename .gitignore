@@ -1,0 +1,59 @@
+# ============================================================
+#  岔音 Xover —— Git 忽略规则
+# ============================================================
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.python-version
+
+# ---------- 运行期产物 ----------
+# 主题偏好等本地设置，换机器不该跟着走
+settings.json
+
+# ---------- 本地工具状态 ----------
+# Agent / WorkBuddy 的工作记录，属于本机状态，不入库
+.workbuddy/
+
+# ---------- 媒体资源（体积大，不入库）----------
+# 用 .gitkeep 占位保留目录结构，音频/MV 由使用者自己放
+flac/*
+!flac/.gitkeep
+mv/*
+!mv/.gitkeep
+*.flac
+*.wav
+*.mp3
+*.m4a
+*.ogg
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.ts
+*.m4v
+*.flv
+*.wmv
+
+# ---------- 编辑器 / 系统 ----------
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---------- 临时文件 ----------
+*.log
+*.tmp
